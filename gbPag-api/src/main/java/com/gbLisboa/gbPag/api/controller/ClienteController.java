@@ -67,7 +67,7 @@ public class ClienteController {
         clienteRepository.deleteById(clienteId);
         return ResponseEntity.noContent().build();
     }
-
+    @ExceptionHandler(NegocioException.class)
     public ResponseEntity<String> capturarException(NegocioException e){
         return ResponseEntity.badRequest().body(e.getMessage());
     }

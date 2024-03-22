@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/gbPag-api.iml" filepath="$PROJECT_DIR$/.idea/gbPag-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Projeto_Curso_AlgaWorks.iml" filepath="$PROJECT_DIR$/.idea/Projeto_Curso_AlgaWorks.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gbPag-api/gbPag-api.iml" filepath="$PROJECT_DIR$/gbPag-api/gbPag-api.iml" />
     </modules>
   </component>
 </project>
