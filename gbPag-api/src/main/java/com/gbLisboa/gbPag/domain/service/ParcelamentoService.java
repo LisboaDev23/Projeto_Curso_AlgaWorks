@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 
 @AllArgsConstructor
 @Service
@@ -23,8 +24,8 @@ public class ParcelamentoService {
         }
         Cliente cliente = cadastroClienteService.buscar(novoParcelamento.getCliente().getId());
         novoParcelamento.setCliente(cliente);
-        novoParcelamento.setDataCriacao(LocalDateTime.now());
-        novoParcelamento.setDataCriacao(LocalDateTime.now());
+        novoParcelamento.setDataCriacao(OffsetDateTime.now());
+        novoParcelamento.setDataCriacao(OffsetDateTime.now());
         return parcelamentoRepository.save(novoParcelamento);
     }
 }
