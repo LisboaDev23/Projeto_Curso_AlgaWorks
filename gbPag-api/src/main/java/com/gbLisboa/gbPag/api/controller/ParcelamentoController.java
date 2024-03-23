@@ -4,6 +4,7 @@ import com.gbLisboa.gbPag.domain.exception.NegocioException;
 import com.gbLisboa.gbPag.domain.model.Parcelamento;
 import com.gbLisboa.gbPag.domain.repository.ParcelamentoRepository;
 import com.gbLisboa.gbPag.domain.service.ParcelamentoService;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,11 +31,7 @@ public class ParcelamentoController {
     }
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Parcelamento cadastrar(@RequestBody Parcelamento parcelamento){
+    public Parcelamento cadastrar(@Valid @RequestBody Parcelamento parcelamento){
         return parcelamentoService.cadastrar(parcelamento);
-    }
-    @ExceptionHandler(NegocioException.class)
-    public ResponseEntity<String> capturarException(NegocioException e){
-        return ResponseEntity.badRequest().body(e.getMessage());
     }
 }

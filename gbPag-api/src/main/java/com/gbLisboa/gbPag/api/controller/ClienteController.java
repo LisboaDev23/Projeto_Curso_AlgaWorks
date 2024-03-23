@@ -43,11 +43,13 @@ public class ClienteController {
         }
         return ResponseEntity.notFound().build();
     }
+
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     public Cliente adicionar(@Valid @RequestBody Cliente cliente){
         return cadastroClienteService.salvar(cliente);
     }
+
     @PutMapping("/{clienteId}")
     public ResponseEntity<Cliente> atualizar(@PathVariable Long clienteId,
                                              @Valid @RequestBody Cliente cliente){
@@ -67,8 +69,5 @@ public class ClienteController {
         clienteRepository.deleteById(clienteId);
         return ResponseEntity.noContent().build();
     }
-    @ExceptionHandler(NegocioException.class)
-    public ResponseEntity<String> capturarException(NegocioException e){
-        return ResponseEntity.badRequest().body(e.getMessage());
-    }
+
 }

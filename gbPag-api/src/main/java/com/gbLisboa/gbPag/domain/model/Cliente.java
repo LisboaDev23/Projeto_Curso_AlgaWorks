@@ -1,5 +1,6 @@
 package com.gbLisboa.gbPag.domain.model;
 
+import com.gbLisboa.gbPag.domain.validation.ValidationGroups;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -15,6 +16,7 @@ import lombok.*;
 @Entity
 //@Table(name = "tb_cliente")
 public class Cliente {
+    @NotNull(groups = ValidationGroups.ClienteId.class)
     @EqualsAndHashCode.Include
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
